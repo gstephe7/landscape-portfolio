@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta chaset="utf-8">
+  <meta http-equiv="U-XA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Greg R. Stephens</title>
+  <link href="css/bootstrap.css" rel="stylesheet">
+  <link href="css/style.css" rel="stylesheet">
+</head>
+<body>
+  <canvas id="sky"></canvas>
+  <div class="container">
+
+    <div id="info-div" class="container">
+      <div id="spaceship-div" class="row">
+
+      </div>
+      <div id="info" class="row">
+
+      </div>
+    </div>
+
+    <!-- Navbar with buildings -->
+    <div class="container">
+      <div id="nav" class="row center-block">
+        <!--<a v-on:click="toggleOnOff()">Toggle</a>
+        <div class="box" v-bind:class="{ green: onOff, orange: !onOff }">
+
+        </div>-->
+        <input type="text" v-model="keyword" />
+        <div class="box" v-bind:style="{backgroundColor: keyword}">
+
+        </div>
+      </div>
+    </div>
+
+  </div>
+  <script src="js/sky.js"></script>
+  <script src="js/vue.js"></script>
+  <script src="js/main.js"></script>
+</body>
+</html>

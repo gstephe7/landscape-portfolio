@@ -1,0 +1,199 @@
+html {
+  height: 100%;
+  position: fixed;
+}
+
+body {
+  background: #7fbbff;
+  background: linear-gradient(#6d88ff, #bad9fc);
+  background: -webkit-linear-gradient(#6d88ff, #bad9fc);
+  background: -o-linear-gradient(#6d88ff, #bad9fc);
+  background: -moz-linear-gradient(#6d88ff, #bad9fc);
+  background-attachment: fixed;
+  width: 100%;
+  height: 100%;
+}
+
+canvas {
+  position: absolute;
+  z-index: -1;
+}
+
+#info-div {
+  height: 50vh;
+}
+
+#about-nav {
+  max-width: 33vw;
+  margin-top: 30px;
+}
+
+.building2 {
+  margin-left: -100px;
+}
+
+.about-text {
+  margin: -330px 0px 0px -2px;
+  font-family: impact;
+  color: red;
+  background-color: lightgrey;
+  width: 76px;
+  font-size: 28px;
+  border: thin grey solid;
+  -o-transform: rotateX(-55deg) rotateY(-25deg);
+  -webkit-transform: rotateX(-55deg) rotateY(-25deg);
+  -moz-transform: rotateX(-55deg) rotateY(-25deg);
+  -ms-transform: rotateX(-55deg) rotateY(-25deg);
+}
+
+.about-btn {
+  color: forestgreen;
+}
+
+.about-btn:hover {
+  color: darkorange;
+  cursor: pointer;
+}
+
+.about-btn:visited {
+  color: darkorange;
+}
+
+#projects-nav {
+  max-width: 33vw;
+  margin-top: 30px;
+}
+
+.projects-text {
+  margin: -260px 0px 0px -35px;
+  font-family: impact;
+  color: red;
+  background-color: lightgrey;
+  width: 111px;
+  font-size: 28px;
+  border: thin grey solid;
+  -o-transform: rotateX(-50deg) rotateY(-31deg);
+  -webkit-transform: rotateX(-50deg) rotateY(-31deg);
+  -moz-transform: rotateX(-50deg) rotateY(-31deg);
+  -ms-transform: rotateX(-50deg) rotateY(-31deg);
+}
+
+.projects-btn:hover {
+  color: darkorange;
+  cursor: pointer;
+}
+
+.projects-btn:visited {
+  color: darkorange;
+}
+
+.building3 {
+  margin: 50px 0px 0px -75px;
+}
+
+#contact-nav {
+  max-width: 33vw;
+  margin-top: 30px;
+}
+
+.contact-text {
+  margin: -265px 0px 0px 0px;
+  font-family: impact;
+  color: red;
+  background-color: lightgrey;
+  width: 105px;
+  font-size: 28px;
+  border: thin grey solid;
+  -o-transform: rotateX(-50deg) rotateY(36deg);
+  -webkit-transform: rotateX(-50deg) rotateY(36deg);
+  -moz-transform: rotateX(-50deg) rotateY(36deg);
+  -ms-transform: rotateX(-50deg) rotateY(36deg);
+}
+
+.contact-btn {
+  color: red;
+}
+
+.contact-btn:hover {
+  color: darkorange;
+  cursor: pointer;
+}
+
+.contact-btn:visited {
+  color: darkorange;
+}
+
+.building1 {
+  margin-left: -80px;
+}
+
+@media screen and (max-width: 549px) {
+  #spaceship {
+    width: 325px;
+    margin-top: -50px;
+  }
+
+  .profile-pic {
+    width: 75px;
+  }
+}
+
+@media screen and (max-width: 724px) and (min-width: 550px) {
+  #spaceship {
+    width: 540px;
+    margin-top: -50px;
+  }
+
+  .profile-pic {
+    width: 100px;
+  }
+}
+
+@media screen and (min-width: 725px) {
+  #spaceship {
+    margin-top: -50px;
+  }
+
+  .profile-pic {
+    width: 125px;
+  }
+}
+
+.info {
+  overflow-x: hidden;
+  overflow-y: scroll;
+  width: 80vw;
+  max-width: 680px;
+  height: 50vh;
+  border: thin black solid;
+  display: none;
+}
+
+.title {
+  font-family: "lucida Sans Typewriter", monospace;
+  margin-bottom: 15px;
+}
+
+.info-text {
+  font-family: "Lucida Sans Typewriter", monospace;
+  margin-left: 10px;
+  list-style-type: none;
+}
+
+/*delete this after test*/
+.box {
+  width: 100px;
+  height: 100px;
+  border: 1px solid black;
+  transition: all 1s;
+}
+
+.green {
+  background-color: green;
+  margin-left: 0px;
+}
+
+.orange {
+  background-color: orange;
+  margin-left: 100px;
+}
