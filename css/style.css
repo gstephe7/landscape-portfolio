@@ -1,5 +1,6 @@
 html {
   height: 100%;
+  width: 100%;
   position: fixed;
 }
 
@@ -16,38 +17,74 @@ body {
 
 canvas {
   position: absolute;
-  z-index: -1;
+  z-index: -100;
 }
 
-#info-div {
+.container {
+  width: 100vw;
+}
+
+#info {
   height: 50vh;
 }
 
+
+/* Drop Down Info/Spaceship */
+@media screen and (max-width: 549px) {
+  .spaceship {
+    width: 325px;
+    transition: all 2s ease
+  }
+
+  .profile-pic {
+    width: 75px;
+  }
+}
+
+@media screen and (max-width: 724px) and (min-width: 550px) {
+  .spaceship {
+    width: 540px;
+    transition: all 2s ease
+  }
+
+  .profile-pic {
+    width: 100px;
+  }
+}
+
+@media screen and (min-width: 725px) {
+  .spaceship {
+    transition: all 2s ease
+  }
+
+  .profile-pic {
+    width: 125px;
+  }
+}
+
+
+#nav {
+  height: 50vh;
+}
+
+/* About Nav */
 #about-nav {
   max-width: 33vw;
-  margin-top: 30px;
+  bottom: -70px;
 }
 
-.building2 {
-  margin-left: -100px;
-}
-
-.about-text {
+.about-btn {
   margin: -330px 0px 0px -2px;
-  font-family: impact;
-  color: red;
+  color: forestgreen;
+  font-family: impact, sans-serif;
   background-color: lightgrey;
-  width: 76px;
+  max-width: 76px;
   font-size: 28px;
   border: thin grey solid;
   -o-transform: rotateX(-55deg) rotateY(-25deg);
   -webkit-transform: rotateX(-55deg) rotateY(-25deg);
   -moz-transform: rotateX(-55deg) rotateY(-25deg);
   -ms-transform: rotateX(-55deg) rotateY(-25deg);
-}
-
-.about-btn {
-  color: forestgreen;
 }
 
 .about-btn:hover {
@@ -59,15 +96,22 @@ canvas {
   color: darkorange;
 }
 
-#projects-nav {
-  max-width: 33vw;
-  margin-top: 30px;
+.about-building {
+  margin: -50px 0px 0px -100px;
+
 }
 
-.projects-text {
+
+/* Projects Nav */
+#projects-nav {
+  bottom: -70px;
+  max-width: 33vw;
+}
+
+.projects-btn {
   margin: -260px 0px 0px -35px;
   font-family: impact;
-  color: red;
+  color: royalblue;
   background-color: lightgrey;
   width: 111px;
   font-size: 28px;
@@ -87,17 +131,19 @@ canvas {
   color: darkorange;
 }
 
-.building3 {
-  margin: 50px 0px 0px -75px;
+.projects-building {
+  margin: 0px 0px 0px -75px;
 }
 
+
+/* Contact Nav */
 #contact-nav {
+  bottom: -70px;
   max-width: 33vw;
-  margin-top: 30px;
 }
 
-.contact-text {
-  margin: -265px 0px 0px 0px;
+.contact-btn {
+  margin: -265px 0px 0px -10px;
   font-family: impact;
   color: red;
   background-color: lightgrey;
@@ -110,10 +156,6 @@ canvas {
   -ms-transform: rotateX(-50deg) rotateY(36deg);
 }
 
-.contact-btn {
-  color: red;
-}
-
 .contact-btn:hover {
   color: darkorange;
   cursor: pointer;
@@ -123,77 +165,19 @@ canvas {
   color: darkorange;
 }
 
-.building1 {
-  margin-left: -80px;
+.contact-building {
+  margin: -30px 0px 0px -90px;
+  right: 0px;
 }
 
-@media screen and (max-width: 549px) {
-  #spaceship {
-    width: 325px;
-    margin-top: -50px;
-  }
 
-  .profile-pic {
-    width: 75px;
-  }
+/* Animations */
+.moveDown {
+  margin-top: -70px;
+  transition: all 1s ease;
 }
 
-@media screen and (max-width: 724px) and (min-width: 550px) {
-  #spaceship {
-    width: 540px;
-    margin-top: -50px;
-  }
-
-  .profile-pic {
-    width: 100px;
-  }
-}
-
-@media screen and (min-width: 725px) {
-  #spaceship {
-    margin-top: -50px;
-  }
-
-  .profile-pic {
-    width: 125px;
-  }
-}
-
-.info {
-  overflow-x: hidden;
-  overflow-y: scroll;
-  width: 80vw;
-  max-width: 680px;
-  height: 50vh;
-  border: thin black solid;
-  display: none;
-}
-
-.title {
-  font-family: "lucida Sans Typewriter", monospace;
-  margin-bottom: 15px;
-}
-
-.info-text {
-  font-family: "Lucida Sans Typewriter", monospace;
-  margin-left: 10px;
-  list-style-type: none;
-}
-
-/*delete this after test*/
-.box {
-  width: 100px;
-  height: 100px;
-  border: 1px solid black;
-  transition: all 1s;
-}
-
-.green {
-  background-color: green;
-  margin-left: 0px;
-}
-
-.orange {
-  background-color: orange;
-  margin-left: 100px;
+.moveUp {
+  margin-top: -300px;
+  transition: all 1s ease
 }

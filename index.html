@@ -10,27 +10,31 @@
 </head>
 <body>
   <canvas id="sky"></canvas>
-  <div class="container">
+  <div id="page" class="container">
 
-    <div id="info-div" class="container">
-      <div id="spaceship-div" class="row">
-
-      </div>
-      <div id="info" class="row">
-
+    <!-- Div for all information/spaceship -->
+    <div id="info" class="container">
+      <div class="row">
+        <div class="col-xs-12">
+          <img class="spaceship center-block" v-bind:src="spaceship.img" v-bind:class="{ moveDown: this.spaceship.moveShip, moveUp: !this.spaceship.moveShip }">
+        </div>
       </div>
     </div>
 
     <!-- Navbar with buildings -->
-    <div class="container">
-      <div id="nav" class="row center-block">
-        <!--<a v-on:click="toggleOnOff()">Toggle</a>
-        <div class="box" v-bind:class="{ green: onOff, orange: !onOff }">
-
-        </div>-->
-        <input type="text" v-model="keyword" />
-        <div class="box" v-bind:style="{backgroundColor: keyword}">
-
+    <div id="nav" class="container">
+      <div class="row">
+        <div id="about-nav" class="col-xs-4">
+          <img class="about-building" v-bind:src="about.img">
+          <p class="about-btn" v-text="about.text" v-on:click="moveDown()"></p>
+        </div>
+        <div id="projects-nav" class="col-xs-4">
+          <img class="projects-building" v-bind:src="projects.img">
+          <p class="projects-btn" v-text="projects.text" v-on:click="moveDown()"></p>
+        </div>
+        <div id="contact-nav" class="col-xs-4">
+          <img class="contact-building" v-bind:src="contact.img">
+          <p class="contact-btn" v-text="contact.text" v-on:click="moveDown()"></p>
         </div>
       </div>
     </div>
