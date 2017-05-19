@@ -40,13 +40,13 @@ function initCanvas() {
         cloud1x = cloud1x + .9;
       }
 
-      if (cloud2x > canvas.width + 400) {
+      if (cloud2x > canvas.width + 300) {
         cloud2x = -200;
       } else {
         cloud2x = cloud2x + .5;
       }
 
-      if (cloud3x > canvas.width + 400) {
+      if (cloud3x > canvas.width + 200) {
         cloud3x = -150
       } else {
         cloud3x = cloud3x + .3;

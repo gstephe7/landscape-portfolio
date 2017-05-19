@@ -10,31 +10,84 @@
 </head>
 <body>
   <canvas id="sky"></canvas>
-  <div id="page" class="container">
+  <div id="main" class="container">
 
-    <!-- Div for all information/spaceship -->
-    <div id="info" class="container">
-      <div class="row">
-        <div class="col-xs-12">
-          <img class="spaceship center-block" v-bind:src="spaceship.img" v-bind:class="{ moveDown: this.spaceship.moveShip, moveUp: !this.spaceship.moveShip }">
+    <!-- Modal for information -->
+    <div class="modal-mask container" v-bind:class="{ showModal: this.displayModal }">
+
+      <!-- About Section -->
+      <div class="row" v-if="this.aboutSection.displayAbout">
+        <div class="info col-xs-10 col-xs-offset-1">
+          <button class="close-modal" v-on:click="showAbout()">CLOSE</button>
+          <div class="row">
+            <div class="col-xs-12">
+              <h2 v-text="aboutSection.title"></h2>
+              <hr />
+              <p class="text-center" v-text="aboutSection.background"></p>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- Projects Section -->
+      <div class="row" v-if="this.projectsSection.displayProjects">
+        <div class="info col-xs-10 col-xs-offset-1">
+          <button class="close-modal" v-on:click="showProjects()">CLOSE</button>
+          <div class="row">
+            <div class="col-xs-12">
+              <h2 v-text="projectsSection.title"></h2>
+              <hr />
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- Contact Section -->
+      <div class="row" v-if="this.contactSection.displayContact">
+        <div class="info col-xs-10 col-xs-offset-1">
+          <button class="close-modal" v-on:click="showContact()">CLOSE</button>
+          <div class="row">
+            <div class="col-xs-12">
+              <h2 v-text="contactSection.title"></h2>
+              <hr />
+            </div>
+          </div>
         </div>
       </div>
     </div>
+
+
+    <!-- Div for welcome/spaceship -->
+    <div id="welcome" class="container">
+      <div class="row">
+        <div class="col-xs-10 col-xs-offset-1">
+          <img class="spaceship center-block" v-bind:src="spaceship.img" v-on:load="moveDown(), slideIn()" v-bind:class="{ moveDown: this.spaceship.moveShip }">
+        </div>
+      </div>
+	    <div class="row">
+	      <div class="welcome-msg col-xs-10 col-xs-offset-1" v-bind:class="{ slideIn: this.welcome.showWelcome }">
+  		    <h1 class="text-center" v-text="welcome.title"></h1>
+  		    <img class="profile-pic center-block img-circle" v-bind:src="welcome.img">
+  		    <h4 class="text-center" v-text="welcome.subtitle"></h4>
+		    </div>
+	    </div>
+    </div>
+
 
     <!-- Navbar with buildings -->
     <div id="nav" class="container">
       <div class="row">
         <div id="about-nav" class="col-xs-4">
-          <img class="about-building" v-bind:src="about.img">
-          <p class="about-btn" v-text="about.text" v-on:click="moveDown()"></p>
+          <img class="about-building" v-bind:src="aboutNav.img">
+          <p class="about-btn" v-text="aboutNav.text" v-on:click="showAbout"></p>
         </div>
         <div id="projects-nav" class="col-xs-4">
-          <img class="projects-building" v-bind:src="projects.img">
-          <p class="projects-btn" v-text="projects.text" v-on:click="moveDown()"></p>
+          <img class="projects-building" v-bind:src="projectsNav.img">
+          <p class="projects-btn" v-text="projectsNav.text" v-on:click="showProjects"></p>
         </div>
         <div id="contact-nav" class="col-xs-4">
-          <img class="contact-building" v-bind:src="contact.img">
-          <p class="contact-btn" v-text="contact.text" v-on:click="moveDown()"></p>
+          <img class="contact-building" v-bind:src="contactNav.img">
+          <p class="contact-btn" v-text="contactNav.text" v-on:click="showContact"></p>
         </div>
       </div>
     </div>

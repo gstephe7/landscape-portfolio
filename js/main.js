@@ -1,26 +1,84 @@
 var page = new Vue({
-  el: '#page',
+  el: '#main',
   data: {
+    displayModal: false,
     spaceship: {
       img: 'img/spaceship.png',
       moveShip: false
     },
-    about: {
+	  welcome: {
+	    title: 'GREG STEPHENS',
+	    img: 'img/profilepic.jpg',
+	    subtitle: 'FRONT-END WEB DEVELOPER',
+      showWelcome: false
+	  },
+    aboutNav: {
       text: 'ABOUT',
       img: 'img/building1.png'
     },
-    projects: {
+    projectsNav: {
       text: 'PROJECTS',
       img: 'img/building2.png'
     },
-    contact: {
+    contactNav: {
       text: 'CONTACT',
       img: 'img/building3.png'
+    },
+	  aboutSection: {
+      displayAbout: false,
+	    title: 'ABOUT',
+	    img: 'img/profilepic.png',
+	    background: 'Hello, my name is Greg Stephens and I\'m a Front-End Web Developer from Athens, GA. I pride myself on being creative, easy-going, and driven to grow within my career.',
+	    skills: {
+		    title: 'SKILLS',
+		    skills: [
+		      'JavaScript',
+		      'Vue.js',
+		      'jQuery',
+		      'HTML5',
+		      'CSS3',
+		      'Bootstrap',
+		      'Git',
+		      'SEO',
+		      'Google Analytics',
+		      'Google Adsense',
+		      'Google Adwords',
+		      'Teaching',
+		      'Blogging',
+		      'Studio One'
+		    ]
+	    }
+	  },
+    projectsSection: {
+      displayProjects: false,
+      title: 'PROJECTS'
+    },
+    contactSection: {
+      displayContact: false,
+      title: 'CONTACT'
     }
   },
   methods: {
     moveDown: function() {
-      this.spaceship.moveShip = !this.spaceship.moveShip;
+      this.spaceship.moveShip = true;
+    },
+	  slideIn: function() {
+      var self = this;
+	    setTimeout(function() {
+		    self.welcome.showWelcome = true;
+	    }, 1500);
+	  },
+    showAbout: function() {
+      this.displayModal = !this.displayModal;
+      this.aboutSection.displayAbout = !this.aboutSection.displayAbout;
+    },
+    showProjects: function() {
+      this.displayModal = !this.displayModal;
+      this.projectsSection.displayProjects = !this.projectsSection.displayProjects;
+    },
+    showContact: function() {
+      this.displayModal = !this.displayModal;
+      this.contactSection.displayContact = !this.contactSection.displayContact;
     }
   }
 })

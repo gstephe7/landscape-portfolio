@@ -20,81 +20,102 @@ canvas {
   z-index: -100;
 }
 
-.container {
-  width: 100vw;
+#main {
+  width: 100%;
 }
 
-#info {
+#welcome {
   height: 50vh;
+}
+
+.profile-pic {
+  width: 75px;
 }
 
 
 /* Drop Down Info/Spaceship */
 @media screen and (max-width: 549px) {
   .spaceship {
-    width: 325px;
-    transition: all 2s ease
+    width: 250px;
+    transition: all 1.5s ease;
+	  margin-top: -300px;
+  }
+
+  .welcome-msg {
+    margin-top: -70px;
+    font-family: "Courier New", Courier, monospace;
+    border: thin grey solid;
+    border-radius: 10px;
+	  opacity: 0;
+    transition: all 2s ease;
+  }
+
+  .slideIn {
+	  opacity: 1;
+    margin-top: -30px;
   }
 
   .moveDown {
     margin-top: -50px;
-    transition: all 1s ease;
-  }
-
-  .moveUp {
-    margin-top: -300px;
-    transition: all 1s ease
-  }
-
-  .profile-pic {
-    width: 75px;
   }
 }
 
 @media screen and (max-width: 724px) and (min-width: 550px) {
   .spaceship {
-    width: 540px;
-    transition: all 2s ease
+    width: 400px;
+    transition: all 1.5s ease;
+	  margin-top: -300px;
+  }
+
+  .welcome-msg {
+    margin-top: -100px;
+    font-family: "Courier New", Courier, monospace;
+    border: thin grey solid;
+    border-radius: 10px;
+    opacity: 0;
+    transition: all 2s ease;
+  }
+
+  .slideIn {
+    margin-top: -35px;
+    opacity: 1;
   }
 
   .moveDown {
     margin-top: -70px;
-    transition: all 1s ease;
-  }
-
-  .moveUp {
-    margin-top: -300px;
-    transition: all 1s ease
-  }
-
-  .profile-pic {
-    width: 100px;
   }
 }
 
 @media screen and (min-width: 725px) {
   .spaceship {
-    transition: all 2s ease
+    width: 500px;
+    transition: all 1.5s ease;
+	  margin-top: -300px;
   }
+
+  .welcome-msg {
+    margin-top: -120px;
+    font-family: "Courier New", Courier, monospace;
+    border: thin grey solid;
+    border-radius: 10px;
+    opacity: 0;
+    transition: all 2s ease;
+  }
+
+  .slideIn {
+    margin-top: -55px;
+    opacity: 1;
+}
 
   .moveDown {
-    margin-top: -100px;
-    transition: all 1s ease;
-  }
-
-  .moveUp {
-    margin-top: -300px;
-    transition: all 1s ease
-  }
-
-  .profile-pic {
-    width: 125px;
+    margin-top: -80px;
   }
 }
 
 
 #nav {
   height: 50vh;
+  position: fixed;
 }
 
 /* About Nav */
@@ -198,4 +219,41 @@ canvas {
 .contact-building {
   margin: -30px 0px 0px -90px;
   right: 0px;
+}
+
+
+/* Modal Style */
+.modal-mask {
+  display: none;
+  background-color: rgba(0, 0, 0, .5);
+  z-index: 9998;
+  position: fixed;
+  top: 0;
+  left: 0;
+  height: 100%;
+  width: 100%;
+  opacity: 0;
+  transition: all 2s ease;
+  margin-top: 50px;
+}
+
+.info {
+  background-color: white;
+  border: thick black solid;
+  border-radius: 10px;
+  overflow-y: scroll;
+  overflow-x: hidden;
+  margin-top: 20px;
+}
+
+.close-modal {
+  margin-top: 10px;
+}
+
+/* Modal Animations */
+.showModal {
+  display: block;
+  opacity: 1;
+  margin-top: 0px;
+  transition: all 2s ease;
 }
