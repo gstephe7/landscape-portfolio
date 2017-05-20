@@ -17,13 +17,98 @@
 
       <!-- About Section -->
       <div class="row" v-if="this.aboutSection.displayAbout">
-        <div class="info col-xs-10 col-xs-offset-1">
-          <button class="close-modal" v-on:click="showAbout()">CLOSE</button>
-          <div class="row">
+        <div class="modal-container col-xs-10 col-xs-offset-1">
+          <div class="modal-header row">
             <div class="col-xs-12">
-              <h2 v-text="aboutSection.title"></h2>
-              <hr />
-              <p class="text-center" v-text="aboutSection.background"></p>
+              <button class="close-modal" v-on:click="showAbout()">CLOSE</button>
+            </div>
+          </div>
+          <div class="modal-body row">
+            <div class="col-xs-12">
+              <div class="row">
+                <div class="col-xs-12">
+                  <h2 v-text="aboutSection.title"></h2>
+                  <p v-text="aboutSection.background"></p>
+                </div>
+              </div>
+              <div class="row">
+                <div class="col-xs-12">
+                  <hr />
+                </div>
+              </div>
+              <div class="row">
+                <div class="col-xs-12">
+                  <h2 v-text="aboutSection.skills.title"></h2>
+                  <div class="col-xs-6">
+                    <ul class="modal-list">
+                      <li class="modal-list-item" v-for="skill in aboutSection.skills.skillsLt">
+                        {{ skill }}
+                      </li>
+                    </ul>
+                  </div>
+                  <div class="col-xs-6">
+                    <ul class="modal-list">
+                      <li class="modal-list-item" v-for="skill in aboutSection.skills.skillsRt">
+                        {{ skill }}
+                      </li>
+                    </ul>
+                  </div>
+                </div>
+              </div>
+              <div class="row">
+                <div class="col-xs-12">
+                  <hr />
+                </div>
+              </div>
+              <div class="row">
+                <div class="col-xs-12">
+                  <h2 v-text="aboutSection.education.title"></h2>
+                  <div class="row">
+                    <div class="col-xs-4">
+                      <img class="modal-pic center-block align-middle" v-bind:src="aboutSection.education.udacity.img" />
+                    </div>
+                    <div class="col-xs-8">
+                      <h4 v-text="aboutSection.education.udacity.name"></h4>
+                      <p>{{ aboutSection.education.udacity.degree }} in {{ aboutSection.education.udacity.major }}</p>
+                      <p v-text="aboutSection.education.udacity.dates"></p>
+                    </div>
+                  </div>
+                  <div class="row">
+                    <div class="col-xs-4">
+                      <img class="modal-pic center-block" v-bind:src="aboutSection.education.kennesaw.img" />
+                    </div>
+                    <div class="col-xs-8">
+                      <h4 v-text="aboutSection.education.kennesaw.name"></h4>
+                      <p>{{ aboutSection.education.kennesaw.degree }} in {{ aboutSection.education.kennesaw.major }}</p>
+                      <p v-text="aboutSection.education.kennesaw.dates"></p>
+                    </div>
+                  </div>
+                </div>
+              </div>
+              <div class="row">
+                <div class="col-xs-12">
+                  <hr />
+                </div>
+              </div>
+              <div class="row">
+                <div class="col-xs-12">
+                  <h2 v-text="aboutSection.interests.title"></h2>
+                  <div class="col-xs-6">
+                    <ul class="modal-list">
+                      <li class="modal-list-item" v-for="interest in aboutSection.interests.interestsLt">
+                        {{ interest }}
+                      </li>
+                    </ul>
+                  </div>
+                  <div class="col-xs-6">
+                    <ul class="modal-list">
+                      <li class="modal-list-item" v-for="interest in aboutSection.interests.interestsRt">
+                        {{ interest }}
+                      </li>
+                    </ul>
+                  </div>
+                </div>
+              </div>
             </div>
           </div>
         </div>
@@ -31,12 +116,33 @@
 
       <!-- Projects Section -->
       <div class="row" v-if="this.projectsSection.displayProjects">
-        <div class="info col-xs-10 col-xs-offset-1">
-          <button class="close-modal" v-on:click="showProjects()">CLOSE</button>
-          <div class="row">
+        <div class="modal-container col-xs-10 col-xs-offset-1">
+          <div class="modal-header row">
             <div class="col-xs-12">
-              <h2 v-text="projectsSection.title"></h2>
-              <hr />
+              <button class="close-modal" v-on:click="showProjects()">CLOSE</button>
+            </div>
+          </div>
+          <div class="modal-body row">
+            <div class="col-xs-12">
+              <div class="row">
+                <div class="col-xs-12">
+                  <h2 v-text="projectsSection.title"></h2>
+                </div>
+              </div>
+              <div class="row">
+                <div class="col-xs-12">
+                  <hr />
+                </div>
+              </div>
+              <div class="row">
+                <div class="col-xs-12">
+                  <h4 v-text="projectsSection.arcadeGame.name"></h4>
+                  <br />
+                  <img class="project-pic center-block" v-bind:src="projectsSection.arcadeGame.img" />
+                  <br />
+                  <p v-text="projectsSection.arcadeGame.description"></p>
+                </div>
+              </div>
             </div>
           </div>
         </div>
@@ -44,9 +150,13 @@
 
       <!-- Contact Section -->
       <div class="row" v-if="this.contactSection.displayContact">
-        <div class="info col-xs-10 col-xs-offset-1">
-          <button class="close-modal" v-on:click="showContact()">CLOSE</button>
-          <div class="row">
+        <div class="modal-container col-xs-10 col-xs-offset-1">
+          <div class="modal-header row">
+            <div class="col-xs-12">
+              <button class="close-modal" v-on:click="showContact()">CLOSE</button>
+            </div>
+          </div>
+          <div class="modal-body row">
             <div class="col-xs-12">
               <h2 v-text="contactSection.title"></h2>
               <hr />
