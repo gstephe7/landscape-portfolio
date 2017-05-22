@@ -25,11 +25,12 @@ canvas {
 }
 
 #welcome {
-  height: 50vh;
+  height: 55vh;
 }
 
 .profile-pic {
   width: 75px;
+  opacity: .8;
 }
 
 
@@ -43,16 +44,25 @@ canvas {
 
   .welcome-msg {
     margin-top: -70px;
-    font-family: "Courier New", Courier, monospace;
-    border: thin grey solid;
-    border-radius: 10px;
 	  opacity: 0;
     transition: all 2s ease;
   }
 
+  .welcome-title {
+    font-family: 'Oswald', sans-serif;
+    font-size: 40px;
+    color: rgba(226, 231, 232, .5);
+  }
+
+  .welcome-subtitle {
+    font-family: 'Oswald', sans-serif;
+    font-size: 20px;
+    color: rgba(226, 231, 232, .5);
+  }
+
   .slideIn {
 	  opacity: 1;
-    margin-top: -30px;
+    margin-top: -20px;
   }
 
   .moveDown {
@@ -69,15 +79,24 @@ canvas {
 
   .welcome-msg {
     margin-top: -100px;
-    font-family: "Courier New", Courier, monospace;
-    border: thin grey solid;
-    border-radius: 10px;
     opacity: 0;
     transition: all 2s ease;
   }
 
+  .welcome-title {
+    font-family: 'Oswald', sans-serif;
+    font-size: 60px;
+    color: rgba(226, 231, 232, .5);
+  }
+
+  .welcome-subtitle {
+    font-family: 'Oswald', sans-serif;
+    font-size: 30px;
+    color: rgba(226, 231, 232, .5);
+  }
+
   .slideIn {
-    margin-top: -35px;
+    margin-top: -45px;
     opacity: 1;
   }
 
@@ -95,17 +114,26 @@ canvas {
 
   .welcome-msg {
     margin-top: -120px;
-    font-family: "Courier New", Courier, monospace;
-    border: thin grey solid;
-    border-radius: 10px;
     opacity: 0;
     transition: all 2s ease;
   }
 
+  .welcome-title {
+    font-family: 'Oswald', sans-serif;
+    font-size: 80px;
+    color: rgba(226, 231, 232, .5);
+  }
+
+  .welcome-subtitle {
+    font-family: 'Oswald', sans-serif;
+    font-size: 40px;
+    color: rgba(226, 231, 232, .5);
+  }
+
   .slideIn {
-    margin-top: -55px;
+    margin-top: -75px;
     opacity: 1;
-}
+  }
 
   .moveDown {
     margin-top: -80px;
@@ -125,11 +153,11 @@ canvas {
 }
 
 .about-btn {
-  margin: -330px 0px 0px -2px;
+  margin: -330px 0px 0px -4px;
   color: forestgreen;
-  font-family: impact, sans-serif;
+  font-family: 'Oswald', sans-serif;
   background-color: lightgrey;
-  max-width: 76px;
+  max-width: 80px;
   font-size: 28px;
   border: thin grey solid;
   -o-transform: rotateX(-55deg) rotateY(-25deg);
@@ -160,11 +188,11 @@ canvas {
 }
 
 .projects-btn {
-  margin: -260px 0px 0px -35px;
-  font-family: impact;
+  margin: -260px 0px 0px -38px;
+  font-family: 'Oswald', sans-serif;
   color: royalblue;
   background-color: lightgrey;
-  width: 111px;
+  width: 117px;
   font-size: 28px;
   border: thin grey solid;
   -o-transform: rotateX(-50deg) rotateY(-31deg);
@@ -195,10 +223,10 @@ canvas {
 
 .contact-btn {
   margin: -265px 0px 0px -10px;
-  font-family: impact;
+  font-family: 'Oswald', sans-serif;
   color: red;
   background-color: lightgrey;
-  width: 105px;
+  width: 108px;
   font-size: 28px;
   border: thin grey solid;
   -o-transform: rotateX(-50deg) rotateY(36deg);

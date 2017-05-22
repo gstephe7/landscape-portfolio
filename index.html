@@ -7,6 +7,7 @@
   <title>Greg R. Stephens</title>
   <link href="css/bootstrap.css" rel="stylesheet">
   <link href="css/style.css" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css?family=Luckiest+Guy|Oswald:700" rel="stylesheet">
 </head>
 <body>
   <canvas id="sky"></canvas>
@@ -208,9 +209,9 @@
       </div>
 	    <div class="row">
 	      <div class="welcome-msg col-xs-10 col-xs-offset-1 col-md-8 col-md-offset-2" v-bind:class="{ slideIn: this.welcome.showWelcome }">
-  		    <h1 class="text-center" v-text="welcome.title"></h1>
+  		    <h1 class="welcome-title text-center" v-text="welcome.title"></h1>
   		    <img class="profile-pic center-block img-circle" v-bind:src="welcome.img">
-  		    <h4 class="text-center" v-text="welcome.subtitle"></h4>
+  		    <h4 class="welcome-subtitle text-center" v-text="welcome.subtitle"></h4>
 		    </div>
 	    </div>
     </div>
