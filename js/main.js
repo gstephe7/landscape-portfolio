@@ -102,15 +102,16 @@ var Main = new Vue({
       email: 'Email: gstephe7@gmail.com',
       linkedin: {
         username: 'gstephe7',
-        url: 'http://www.linkedin.com/in/gstephe7'
+        url: 'https://www.linkedin.com/in/gstephe7'
       },
       github: {
         username: 'gstephe7',
-        url: 'http://www.github.com/gstephe7'
+        url: 'https://www.github.com/gstephe7'
       },
       location: {
         title: 'LOCATION',
-        src: 'https://maps.googleapis.com/maps/api/js?key=AIzaSyBC42eU4SxHOKvJsE_aAqDk_TYzyXOLP6A&callback=Main.initMap'
+        src: 'https://maps.googleapis.com/maps/api/js?key=AIzaSyBC42eU4SxHOKvJsE_aAqDk_TYzyXOLP6A&callback=Main.initMap',
+        latLng: '{lat: 33.951935, lng: -83.357567}'
       }
     }
   },
@@ -137,17 +138,14 @@ var Main = new Vue({
       this.contactSection.displayContact = !this.contactSection.displayContact;
     },
     initMap: function() {
-      if (this.contactSection.displayContact === true) {
-        var latLng = {lat: 33.951935, lng: -83.357567};
-        var map = new google.maps.Map(document.getElementById('map'), {
-          zoom: 4,
-          center: latLng
-        });
-        var marker = new google.maps.Marker({
-          position: latLng,
-          map: map
-        });
-      }
+      var map = new google.maps.Map(document.getElementById('map'), {
+        zoom: 4,
+        center: this.contactSection.location.latLng
+      });
+      var marker = new google.maps.Marker({
+        position: this.contactSection.location.latLng,
+        map: map
+      });
     }
   }
 });

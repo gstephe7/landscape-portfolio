@@ -221,15 +221,15 @@
       <div class="row">
         <div id="about-nav" class="col-xs-4">
           <img class="about-building" v-bind:src="aboutNav.img">
-          <p class="about-btn" v-text="aboutNav.text" v-on:click="showAbout"></p>
+          <p class="about-btn" v-text="aboutNav.text" v-on:click="showAbout()"></p>
         </div>
         <div id="projects-nav" class="col-xs-4">
           <img class="projects-building" v-bind:src="projectsNav.img">
-          <p class="projects-btn" v-text="projectsNav.text" v-on:click="showProjects"></p>
+          <p class="projects-btn" v-text="projectsNav.text" v-on:click="showProjects()"></p>
         </div>
         <div id="contact-nav" class="col-xs-4">
           <img class="contact-building" v-bind:src="contactNav.img">
-          <p class="contact-btn" v-text="contactNav.text" v-on:click="showContact"></p>
+          <p class="contact-btn" v-text="contactNav.text" v-on:click="showContact(), initMap()"></p>
         </div>
       </div>
     </div>
@@ -238,6 +238,6 @@
   <script src="js/sky.js"></script>
   <script src="js/vue.js"></script>
   <script src="js/main.js"></script>
-  <script v-if="this.contactSection.displayContact" v-bind:src="contactSection.location.src"></script>
+  <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyBC42eU4SxHOKvJsE_aAqDk_TYzyXOLP6A&callback=Main.initMap"></script>
 </body>
 </html>
