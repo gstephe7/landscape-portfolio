@@ -25,6 +25,7 @@ var Main = new Vue({
       img: 'img/building3.png'
     },
 	  aboutSection: {
+      displayModal: false,
       displayAbout: false,
 	    title: 'ABOUT',
 	    img: 'img/profilepic.png',
@@ -86,6 +87,7 @@ var Main = new Vue({
       }
 	  },
     projectsSection: {
+      displayModal: false,
       displayProjects: false,
       title: 'PROJECTS',
       arcadeGame: {
@@ -95,6 +97,7 @@ var Main = new Vue({
       }
     },
     contactSection: {
+      displayModal: false,
       displayContact: false,
       title: 'CONTACT',
       name: 'Name: Greg Stephens',
@@ -110,8 +113,7 @@ var Main = new Vue({
       },
       location: {
         title: 'LOCATION',
-        src: 'https://maps.googleapis.com/maps/api/js?key=AIzaSyBC42eU4SxHOKvJsE_aAqDk_TYzyXOLP6A&callback=Main.initMap',
-        latLng: '{lat: 33.951935, lng: -83.357567}'
+        src: 'https://maps.googleapis.com/maps/api/staticmap?center=Athens,+GA&zoom=4&size=600x400&maptype=roadmap&markers=color:red%7Clabel:C%7C33.951935,-83.357567&key=AIzaSyBLuC7c4N_HV-zpJ6OmHElbrlH6RmQU4G4'
       }
     }
   },
@@ -126,26 +128,28 @@ var Main = new Vue({
 	    }, 1500);
 	  },
     showAbout: function() {
+      var self = this;
       this.displayModal = !this.displayModal;
-      this.aboutSection.displayAbout = !this.aboutSection.displayAbout;
+      this.aboutSection.displayModal = !this.aboutSection.displayModal;
+      setTimeout(function() {
+        self.aboutSection.displayAbout = !self.aboutSection.displayAbout;
+      }, 10);
     },
     showProjects: function() {
+      var self = this;
       this.displayModal = !this.displayModal;
-      this.projectsSection.displayProjects = !this.projectsSection.displayProjects;
+      this.projectsSection.displayModal = !this.projectsSection.displayModal;
+      setTimeout(function() {
+        self.projectsSection.displayProjects = !self.projectsSection.displayProjects;
+      }, 10);
     },
     showContact: function() {
+      var self = this;
       this.displayModal = !this.displayModal;
-      this.contactSection.displayContact = !this.contactSection.displayContact;
-    },
-    initMap: function() {
-      var map = new google.maps.Map(document.getElementById('map'), {
-        zoom: 4,
-        center: this.contactSection.location.latLng
-      });
-      var marker = new google.maps.Marker({
-        position: this.contactSection.location.latLng,
-        map: map
-      });
+      this.contactSection.displayModal = !this.contactSection.displayModal;
+      setTimeout(function() {
+        self.contactSection.displayContact = !self.contactSection.displayContact;
+      }, 10);
     }
   }
 });
