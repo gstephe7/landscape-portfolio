@@ -158,8 +158,40 @@
           </div>
           <div class="modal-body row">
             <div class="col-xs-12">
-              <h2 v-text="contactSection.title"></h2>
-              <hr />
+              <div class="row">
+                <div class="col-xs-12">
+                  <h2 v-text="contactSection.title"></h2>
+                </div>
+              </div>
+              <div class="row">
+                <div class="col-xs-12">
+                  <hr />
+                </div>
+              </div>
+              <div class="row">
+                <div class="col-xs-12">
+                  <p v-text="contactSection.name"></p>
+                  <p v-text="contactSection.phone"></p>
+                  <p v-text="contactSection.email"></p>
+                  <p>LinkedIn: <a v-bind:href="contactSection.linkedin.url" v-text="contactSection.linkedin.username" target="_blank"></a></p>
+                  <p>Github: <a v-bind:href="contactSection.github.url" v-text="contactSection.github.username" target="_blank"></a></p>
+                </div>
+              </div>
+              <div class="row">
+                <div class="col-xs-12">
+                  <hr />
+                </div>
+              </div>
+              <div class="row">
+                <div class="col-xs-12">
+                  <h2 v-text="contactSection.location.title"></h2>
+                </div>
+              </div>
+              <div class="row">
+                <div class="col-xs-12">
+                  <div id="map"></div>
+                </div>
+              </div>
             </div>
           </div>
         </div>
@@ -206,5 +238,6 @@
   <script src="js/sky.js"></script>
   <script src="js/vue.js"></script>
   <script src="js/main.js"></script>
+  <script v-if="this.contactSection.displayContact" v-bind:src="contactSection.location.src"></script>
 </body>
 </html>

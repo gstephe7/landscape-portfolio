@@ -1,4 +1,4 @@
-var page = new Vue({
+var Main = new Vue({
   el: '#main',
   data: {
     displayModal: false,
@@ -96,7 +96,22 @@ var page = new Vue({
     },
     contactSection: {
       displayContact: false,
-      title: 'CONTACT'
+      title: 'CONTACT',
+      name: 'Name: Greg Stephens',
+      phone: 'Cell: 678-863-0189',
+      email: 'Email: gstephe7@gmail.com',
+      linkedin: {
+        username: 'gstephe7',
+        url: 'http://www.linkedin.com/in/gstephe7'
+      },
+      github: {
+        username: 'gstephe7',
+        url: 'http://www.github.com/gstephe7'
+      },
+      location: {
+        title: 'LOCATION',
+        src: 'https://maps.googleapis.com/maps/api/js?key=AIzaSyBC42eU4SxHOKvJsE_aAqDk_TYzyXOLP6A&callback=Main.initMap'
+      }
     }
   },
   methods: {
@@ -120,6 +135,19 @@ var page = new Vue({
     showContact: function() {
       this.displayModal = !this.displayModal;
       this.contactSection.displayContact = !this.contactSection.displayContact;
+    },
+    initMap: function() {
+      if (this.contactSection.displayContact === true) {
+        var latLng = {lat: 33.951935, lng: -83.357567};
+        var map = new google.maps.Map(document.getElementById('map'), {
+          zoom: 4,
+          center: latLng
+        });
+        var marker = new google.maps.Marker({
+          position: latLng,
+          map: map
+        });
+      }
     }
   }
 });

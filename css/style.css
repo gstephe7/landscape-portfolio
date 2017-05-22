@@ -274,6 +274,11 @@ canvas {
   margin-top: 7px;
 }
 
+#map {
+  height: 400px;
+  width: 100%;
+}
+
 /* Modal Animations */
 .showModal {
   display: block;
