@@ -281,6 +281,14 @@ canvas {
   height: 80%;
 }
 
+.modal-title {
+  font-family: 'Oswald', sans-serif;
+}
+
+.modal-text {
+
+}
+
 .modal-list {
   list-style-type: none;
 }

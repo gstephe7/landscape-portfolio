@@ -33,22 +33,22 @@ var Main = new Vue({
 	    skills: {
 		    title: 'SKILLS',
 		    skillsLt: [
-		      'JavaScript',
-		      'Vue.js',
-		      'jQuery',
-		      'HTML5',
-		      'CSS3',
-		      'Bootstrap',
-		      'Git'
+		      {name: 'JavaScript', url: 'https://www.javascript.com'},
+		      {name: 'Vue.js', url: 'https://vuejs.org/'},
+		      {name: 'jQuery', url: 'https://jquery.com/'},
+		      {name: 'HTML5', url: 'https://en.wikipedia.org/wiki/HTML5'},
+		      {name: 'CSS3', url: 'https://developer.mozilla.org/en-US/docs/Web/CSS/CSS3'},
+		      {name: 'Bootstrap', url: 'http://getbootstrap.com/'},
+		      {name: 'Git', url: 'https://git-scm.com/'}
 		    ],
         skillsRt: [
-          'SEO',
-		      'Google Analytics',
-		      'Google Adsense',
-		      'Google Adwords',
-		      'Teaching',
-		      'Blogging',
-		      'Studio One'
+          {name: 'SEO', url: 'https://en.wikipedia.org/wiki/Search_engine_optimization'},
+		      {name: 'Google Analytics', url: 'https://analytics.google.com'},
+		      {name: 'Google Adsense', url: 'https://www.google.com/adsense/start'},
+		      {name: 'Google Adwords', url: 'https://adwords.google.com'},
+		      {name: 'Teaching', url: 'https://en.wikipedia.org/wiki/Teacher'},
+		      {name: 'Blogging', url: 'https://en.wikipedia.org/wiki/Blog'},
+		      {name: 'Studio One', url: 'http://www.presonus.com/products/studio-one/'}
         ]
 	    },
       education: {
@@ -58,14 +58,16 @@ var Main = new Vue({
           degree: 'Nanodegree',
           major: 'Front-End Web Development',
           dates: '2017',
-          img: 'img/udacity.jpg'
+          img: 'img/udacity.jpg',
+          url: 'https://www.udacity.com/'
         },
         kennesaw: {
           name: 'Kennesaw State University',
           degree: 'Bachelor\'s',
           major: 'History Education',
           dates: '2009-2012',
-          img: 'img/ksu.jpg'
+          img: 'img/ksu.jpg',
+          url: 'http://www.kennesaw.edu/'
         }
       },
       interests: {
@@ -101,8 +103,14 @@ var Main = new Vue({
       displayContact: false,
       title: 'CONTACT',
       name: 'Name: Greg Stephens',
-      phone: 'Cell: 678-863-0189',
-      email: 'Email: gstephe7@gmail.com',
+      phone: {
+        cell: '678-863-0189',
+        call: 'tel:678-863-0189'
+      },
+      email: {
+        address: 'gstephe7@gmail.com',
+        url: 'mailto:gstephe7@gmail.com'
+      },
       linkedin: {
         username: 'gstephe7',
         url: 'https://www.linkedin.com/in/gstephe7'
