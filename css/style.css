@@ -146,6 +146,13 @@ canvas {
   position: fixed;
 }
 
+@media screen and (min-height: 750px) {
+  #nav {
+    margin-top: 150px;
+    position: fixed;
+  }
+}
+
 /* About Nav */
 #about-nav {
   max-width: 33vw;
