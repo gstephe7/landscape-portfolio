@@ -146,7 +146,7 @@ canvas {
   position: fixed;
 }
 
-@media screen and (min-height: 750px) {
+@media screen and (min-height: 800px) {
   #nav {
     margin-top: 150px;
     position: fixed;
