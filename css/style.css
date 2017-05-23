@@ -60,6 +60,10 @@ canvas {
     color: rgba(226, 231, 232, .5);
   }
 
+  .modal-list {
+    margin-left: -30px;
+  }
+
   .slideIn {
 	  opacity: 1;
     margin-top: -20px;
